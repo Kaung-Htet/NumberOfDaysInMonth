@@ -1,4 +1,5 @@
 public class NumberOfDaysInMonth {
+
     public static boolean isLeapYear (int year){
         int remainderDivisibleBy4 = year % 4;
         int remainderDivisibleBy100 = year % 100;
@@ -22,7 +23,50 @@ public class NumberOfDaysInMonth {
             return false;
         }
     }
+
+    public static int getDaysInMonth(int month, int year) {
+        if (year >= 1 && year <= 9999) {
+            int days;
+            switch (month) {
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    days = 30;
+                    return days;
+
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    days = 31;
+                    return days;
+
+                case 2:
+                    if (isLeapYear(year)) {
+                        days = 29;
+                        return days;
+                    } else {
+                        days = 28;
+                        return days;
+                    }
+
+                default:
+                    return -1;
+
+            }
+        } else {
+            return -1;
+        }
+    }
 }
+
+//30 sep,apr, jun, nov 9,4,6,11
+//31 1,3.5.7.8.10.12
+//28 feb
 
 //Write a method isLeapYear with a parameter of type int named year.
 //
