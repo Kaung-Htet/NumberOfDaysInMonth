@@ -48,11 +48,10 @@ public class NumberOfDaysInMonth {
                 case 2:
                     if (isLeapYear(year)) {
                         days = 29;
-                        return days;
                     } else {
                         days = 28;
-                        return days;
                     }
+                    return days;
 
                 default:
                     return -1;
